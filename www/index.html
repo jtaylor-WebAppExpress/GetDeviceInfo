@@ -30,6 +30,7 @@
             document.addEventListener("deviceready", onDeviceReady, false);
             
             function onDeviceReady() {
+                var uuid = device.uuid;
                 navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
             }
             
@@ -43,7 +44,7 @@
                 var urlString = 'http://wae.homedns.org/svctrak/index.a5w?latitude=' 
                                 + currLat +'&longitude=' + currLong;
                 //go there
-                alert('MAC ADDRESS TEST!');
+                alert(uuid);
             }
             
             function onError(error) {
