@@ -30,13 +30,17 @@
             document.addEventListener("deviceready", onDeviceReady, false);
             
             function onDeviceReady() {
-                var str_uuid = device.uuid;
                 navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
             }
             
             function onSuccess(position) {
                 var currLat = position.coords.latitude;
                 var currLong = position.coords.longitude;
+                var dev_Name = device.name;
+                var dev_PhoneGap = device.phonegap;
+                var dev_Platform = device.platform;
+                var dev_UUID = device.uuid;
+                var dev_Version = device.version;
                 
 
                                   
@@ -44,8 +48,11 @@
                 var urlString = 'http://wae.homedns.org/svctrak/index.a5w?latitude=' 
                                 + currLat +'&longitude=' + currLong;
                 //go there
-                alert('here comes the uuid!');
-                alert(device.uuid);
+                alert(dev_Name);
+                alert(dev_PhoneGap);
+                alert(dev_Platform);
+                alert(dev_UUID);
+                alert(dev_Version);
             }
             
             function onError(error) {
